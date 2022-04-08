@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ragmentia!</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container">
+		
+		<h1>{{hello_world}}</h1>
+
+		{% if point_value %}
+			<h3>That is worth {{ point_value }} points!</h3>
+		{% endif %}
+
+		{% if word_status %}
+			<h4>The word status of that is {{ word_status }}!</h3>
+		{% endif %}
+
+		{% if current_player %}
+			<h4>The current player is {{ current_player }}</h3>
+		{% endif %}
+
+		{% if player_one_score %}
+			<h4>Player one score is {{ player_one_score }}</h3>
+			<h4>Player two score is {{ player_two_score }}</h3>
+		{% endif %}
+
+		{% if game_over %}
+			<h1>{{ game_over }}</h1>
+		{% endif %}
+
+		<form action="{% url 'index' %}" method="post">
+			{% csrf_token %}
+
+			<!-- <label for="my_input_box">Play</label> -->
+	    	<div>
+	        	<input type="text" id="my_input_box" name="my_input_box" />
+	        </div>
+
+	       	<input type="submit" value="Submit">
+
+		</form>
+
+	</div>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+</body>
+</html>
